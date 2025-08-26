@@ -1,11 +1,18 @@
 from fastapi import FastAPI
 app = FastAPI()
-@app.get("/calc")
-def calc(a:int, b:int):
+@app.get("/multiply")
+def multiply(a:int, b:int):
     return {
-        "add": a+b,
-        "sub":a-b,
-        "multiply": a*b,
-        "div": a/b
+        "multiply": a*b
         }
+@app.get("/addition")
+def addition(a: int, b: int):
+    return {"addtion": a + b}
 
+@app.get("/subtraction")
+def subtraction(a: int, b: int):
+    return {"subtraction": a - b}
+
+@app.get("/division")
+def division(a: int, b: int):
+    return {"addtion": a / b}
